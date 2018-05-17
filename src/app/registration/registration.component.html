@@ -1,0 +1,73 @@
+<form class="needs-validation" novalidate [formGroup]="regForm" 
+(ngSubmit)="registerUser(regForm.value)">
+  <fieldset>
+    <div class="form-group"
+         [ngClass]="{
+        'has-danger': fname.invalid && (fname.dirty || fname.touched),
+        'has-success': fname.valid && (fname.dirty || fname.touched)
+      }">
+      <label>{{'FName' | translate}}</label>
+      <input type="text"
+             class="form-control"
+             formControlName="fname"
+             required>
+      <div class="form-control-feedback"
+           *ngIf="fname.errors && (fname.dirty || fname.touched)">
+        <p *ngIf="fname.errors.required">{{'FNameRequired' | translate}}</p>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{
+        'has-danger': lname.invalid && (lname.dirty || lname.touched),
+        'has-success': lname.valid && (lname.dirty || lname.touched)
+      }">
+      <label>{{'LName' | translate}}</label>
+      <input type="text"
+             class="form-control"
+             formControlName="lname"
+             required>
+      <div class="form-control-feedback"
+           *ngIf="lname.errors && (lname.dirty || lname.touched)">
+        <p *ngIf="lname.errors.required">{{'LNameRequired' | translate}}</p>
+      </div>
+    </div>
+  </fieldset>
+  <div class="form-group"
+       [ngClass]="{
+        'has-danger': email.invalid && (email.dirty || email.touched),
+        'has-success': email.valid && (email.dirty || email.touched)
+   }">
+    <label>{{'Email' | translate}}</label>
+    <input type="email"
+           class="form-control"
+           formControlName="email"
+           required>
+    <div class="form-control-feedback"
+         *ngIf="email.errors && (email.dirty || email.touched)">
+      <p *ngIf="email.errors.required">{{'EmailRequired' | translate}}</p>
+      <p *ngIf="email.errors.email">{{'EmailFormat' | translate}}</p>
+    </div>
+  </div>
+
+  <div class="form-group"
+       [ngClass]="{
+        'has-danger': pwd.invalid && (pwd.dirty || pwd.touched),
+        'has-success': pwd.valid && (pwd.dirty || pwd.touched)
+   }">
+    <label>{{'Password' | translate}}</label>
+    <input type="password"
+           class="form-control"
+           formControlName="pwd"
+           required>
+    <div class="form-control-feedback"
+         *ngIf="pwd.errors && (pwd.dirty || pwd.touched)">
+      <p *ngIf="pwd.errors.required">{{'PasswordRequired' | translate}}</p>
+      <p *ngIf="pwd.errors.minlength">{{'PasswordFormat' | translate}} {{pwd.errors.minlength.requiredLength - pwd.errors.minlength.actualLength}} characters </p>
+    </div>
+  </div>
+  <button [disabled]="regForm.invalid" class="btn btn-primary" type="submit">Submit form</button>
+  <div class="form-group" class="alert alert-danger center-block" *ngIf = "statusMessage">
+		<span>{{statusMessage}}</span>
+	</div>
+</form>

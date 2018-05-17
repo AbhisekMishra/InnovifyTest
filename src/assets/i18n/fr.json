@@ -1,0 +1,20 @@
+{
+  "Hello": "Bonjour le monde!",
+  "HeaderText": "C'est une simple unité de héros, un simple composant de style jumbotron pour attirer l'attention sur le contenu ou les informations.",
+  "Login": "S'identifier",
+  "Email": "Email",
+  "Password": "Mot de passe",
+  "Submit": "Soumettre",
+  "FName": "Prénom",
+  "LName": "Nom de famille",
+  "Submit": "Soumettre le formulaire",
+  "EmailRequired": "Le courriel est requis",
+  "EmailFormat": "L'adresse e-mail doit être de format correct",
+  "PasswordRequired": "Le courriel est requis",
+  "PasswordFormat": "L'adresse e-mail doit être de format correct",
+  "FNameRequired": "Le prénom est requis",
+  "LNameRequired": "Nom de famille est requis",
+  "Welcome": "Bienvenue",
+  "Registration": "enregistrement",
+  "Logout": "Connectez - Out"
+}
